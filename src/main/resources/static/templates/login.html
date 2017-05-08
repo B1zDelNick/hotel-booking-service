@@ -1,0 +1,15 @@
+<div xmlns:th="http://www.thymeleaf.org">
+    <form role="form" class="form-signin" action="#" method="post" th:action="@{/authenticate}">
+        <h3 class="muted form-signin-heading">Please sign in</h3>
+        <input type="text" class="input-block-level" ng-model="credentials.username" placeholder="User name" name="username">
+        <input type="password" class="input-block-level" ng-model="credentials.password" placeholder="Password" name="password">
+        <button class="btn btn-primary" type="submit">Sign in</button>
+        <button type="button" class="btn btn-default" ng-click="cancelEdit()">Register</button>
+        <hr/>
+    </form>
+</div>
+
+<div xmlns:th="http://www.thymeleaf.org"
+     class="alert alert-danger" th:if="param.error">
+    <h4>There was a problem logging in. Please try again.</h4>
+</div>
